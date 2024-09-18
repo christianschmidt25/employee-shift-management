@@ -8,3 +8,15 @@ const employees = [
 ];
 //my employees and their schedules!
 
+// Task 2: Create a Function to Display Employee Shift Details
+
+function displayEmployeeShifts(employeeName) {
+    const employee = employees.find(employee => employee.name === employeeName); 
+        console.log(`Employee Name: ${employee.name}`);
+        console.log(`Shifts:`);
+        employee.shifts.forEach(shift => { //finds each shift in the array that the employee works
+            console.log(`Day: ${shift.day}, Hours: ${shift.hours}`)
+        })
+}
+
+displayEmployeeShifts('Isaac')
