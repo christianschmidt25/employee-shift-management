@@ -57,5 +57,14 @@ function calculateTotalHours(employeeName) {
 calculateTotalHours('Jolie')
 
 
+// Task 5: Create a Function to List Employees with Free Days
 
+function listAvailableEmployees(day) {
+    const availableEmployees = employees.filter(employee => !employee.shifts.find(shift => shift.day === day)); 
+    //creates availableEmployees, which checks each employee that does not have a shift on the given day and puts them in this category
+    
+    if (availableEmployees)
+        console.log(`Available Employees on ${day}: ${availableEmployees.map(employees => employees.name)}`)
+} //if they do not have a shift, the available employees will be mapped so all of the employees not working will be included
 
+listAvailableEmployees('Saturday')
